@@ -9,12 +9,14 @@ Purpose: This is the main cpp file.
 int main() {
 
     Hashtable hash;
+    
+    cout << "hash should be empty: " << (hash.isEmpty() ? "true" : "false") << endl;
+    
     hash.add(100, "test");
     hash.add(233, "test");
-
     hash.add(108, "test");
 
+    cout << "added some items, hash should not be empty: " << (hash.isEmpty() == false ? "true" : "false") << endl;
 
-    hash.dumpTable();
     return 0;
 }

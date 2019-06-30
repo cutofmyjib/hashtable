@@ -13,7 +13,8 @@ Purpose: This is the hash table header file.
 
 #include <string>
 using std::string;
-
+using std::cout;
+using std::endl;
 
 #define TABLESIZE 19
 
@@ -22,6 +23,7 @@ public:
     Hashtable();
     ~Hashtable();
     bool add(int id, string data);
+    bool isEmpty();
     void dumpTable();
 
 private:

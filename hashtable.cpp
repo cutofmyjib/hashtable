@@ -34,10 +34,20 @@ int Hashtable::hashFunction(int id)
 bool Hashtable::add(int id, string data)
 {
     int hashedId = hashFunction(id);
-    
     bool isAdded = linkedListArray[hashedId].addNode(id, data);
-    
     return isAdded;
+}
+
+bool Hashtable::isEmpty()
+{
+    for (int i = 0; i < TABLESIZE; i++) {
+        
+        if (linkedListArray[i].getCount() != 0)
+        {
+            return false;
+        }
+    }
+    return true;
 }
 
 void Hashtable::dumpTable() {
