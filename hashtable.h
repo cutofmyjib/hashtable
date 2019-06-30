@@ -23,9 +23,12 @@ public:
     Hashtable();
     ~Hashtable();
     bool add(int id, string data);
+    void clear();
+    bool contains(int id);
     int getNumberOfEntries();
     bool isEmpty();
     void dumpTable();
+    bool remove(int targetId);
 
 private:
     int hashFunction(int id);

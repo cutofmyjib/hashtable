@@ -112,7 +112,6 @@ bool DoublyLinkedList::clear()
 
 bool DoublyLinkedList::deleteNode(int targetId)
 {
-    DataNode *targetNode = new DataNode();
     Node *currentPtr;
 
     if (!head)

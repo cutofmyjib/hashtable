@@ -19,5 +19,15 @@ int main() {
     cout << "added some items, hash should not be empty: " << (hash.isEmpty() == false ? "true" : "false") << endl;
 
     cout << "number of entries == 3: " << (hash.getNumberOfEntries() == 3 ? "true" : "false") << endl;
+
+    cout << "Removing id 100: " << (hash.remove(100) ? "true" : "false") << endl;
+    cout << "number of entries == 2: " << (hash.getNumberOfEntries() == 2 ? "true" : "false") << endl;
+
+    cout << "Hash table contains id 100: false == " << (hash.contains(100) ? "true" : "false") << endl;
+    cout << "Hash table contains id 108: true == " << (hash.contains(108) ? "true" : "false") << endl;
+    hash.dumpTable();
+    cout << "------------ clearing hash table ------------" << endl;
+    hash.clear();
+    hash.dumpTable();
     return 0;
 }
