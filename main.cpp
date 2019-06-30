@@ -18,5 +18,6 @@ int main() {
 
     cout << "added some items, hash should not be empty: " << (hash.isEmpty() == false ? "true" : "false") << endl;
 
+    cout << "number of entries == 3: " << (hash.getNumberOfEntries() == 3 ? "true" : "false") << endl;
     return 0;
 }

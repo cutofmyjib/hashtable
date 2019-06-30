@@ -23,6 +23,7 @@ public:
     Hashtable();
     ~Hashtable();
     bool add(int id, string data);
+    int getNumberOfEntries();
     bool isEmpty();
     void dumpTable();
 

@@ -38,6 +38,16 @@ bool Hashtable::add(int id, string data)
     return isAdded;
 }
 
+int Hashtable::getNumberOfEntries()
+{
+    int count = 0;
+
+    for (int i = 0; i < TABLESIZE; i++) {
+        count += linkedListArray[i].getCount();
+    }
+    return count;
+}
+
 bool Hashtable::isEmpty()
 {
     for (int i = 0; i < TABLESIZE; i++) {
