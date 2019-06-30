@@ -22,8 +22,10 @@ public:
     Hashtable();
     ~Hashtable();
     bool add(int id, string data);
+    void dumpTable();
 
 private:
+    int hashFunction(int id);
     DoublyLinkedList *linkedListArray;
 };
 

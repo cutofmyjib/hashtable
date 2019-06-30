@@ -9,7 +9,12 @@ Purpose: This is the main cpp file.
 int main() {
 
     Hashtable hash;
-    hash.add(5, "test");
-    
+    hash.add(100, "test");
+    hash.add(233, "test");
+
+    hash.add(108, "test");
+
+
+    hash.dumpTable();
     return 0;
 }

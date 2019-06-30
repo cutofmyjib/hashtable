@@ -18,7 +18,7 @@ Purpose: This is where all the hashtable functions are defined.
 Hashtable::Hashtable()
 {
     linkedListArray = new DoublyLinkedList[TABLESIZE];
-};  
+}  
 
 //DESTRUCTOR
 Hashtable::~Hashtable()
@@ -26,10 +26,27 @@ Hashtable::~Hashtable()
    
 }
 
-bool Hashtable::add(int id, string data)
+int Hashtable::hashFunction(int id) 
 {
-    linkedListArray[0].addNode(id, data);
-    linkedListArray[0].printList(); // test
-    return true;
+    return id % TABLESIZE;
 }
 
+bool Hashtable::add(int id, string data)
+{
+    int hashedId = hashFunction(id);
+    
+    bool isAdded = linkedListArray[hashedId].addNode(id, data);
+    
+    return isAdded;
+}
+
+void Hashtable::dumpTable() {
+    for (int i = 0; i < TABLESIZE; i++) {
+
+        if (linkedListArray[i].getCount() > 0) {
+            linkedListArray[i].printList();
+        } else {
+            cout << "not used" << endl;
+        }
+    }
+}
