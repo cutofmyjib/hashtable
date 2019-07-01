@@ -29,5 +29,10 @@ int main() {
     cout << "------------ clearing hash table ------------" << endl;
     hash.clear();
     hash.dumpTable();
+    
+    DataNode *searchNode = new DataNode();
+    hash.getValue(108, searchNode);
+    cout << "searchNode data: " << searchNode->data << endl;
+    
     return 0;
 }

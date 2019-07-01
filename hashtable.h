@@ -26,6 +26,7 @@ public:
     void clear();
     bool contains(int id);
     int getNumberOfEntries();
+    bool getValue(int targetId, DataNode *returnNode);
     bool isEmpty();
     void dumpTable();
     bool remove(int targetId);

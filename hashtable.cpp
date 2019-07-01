@@ -2,13 +2,13 @@
 Name: Diana Lozano
 Assignment: 04
 Purpose: This is where all the hashtable functions are defined.
-x■ isEmpty(): boolean -- Sees whether this dictionary is empty.
-x■ getNumberOfEntries(): integer -- Gets the number of items in this dictionary.
-x■ add(int id, string data): boolean -- Inserts an item into this dictionary according to the item’s search key.
-x■ remove(int targetId): boolean -- Removes the item with the given search key from this dictionary.
-x■ clear(): void -- Removes all entries from this dictionary.
-■ getValue(int searchKey) -- Gets an item with a given search key from this dictionary
-x■ contains(int targetId): boolean -- Sees whether this dictionary contains an item with a given search key.
+■ isEmpty(): boolean -- Sees whether this dictionary is empty.
+■ getNumberOfEntries(): integer -- Gets the number of items in this dictionary.
+■ add(int id, string data): boolean -- Inserts an item into this dictionary according to the item’s search key.
+■ remove(int targetId): boolean -- Removes the item with the given search key from this dictionary.
+■ clear(): void -- Removes all entries from this dictionary.
+■ getValue(int searchKey): valueType -- Gets an item with a given search key from this dictionary
+ contains(int targetId): boolean -- Sees whether this dictionary contains an item with a given search key.
 ■ traverse(visit(item: ItemType): void): void -- Traverses this dictionary and calls a given client function once for each item.
 ***********************************************************/
 #include "hashtable.h"
@@ -62,6 +62,19 @@ int Hashtable::getNumberOfEntries()
         count += linkedListArray[i].getCount();
     }
     return count;
+}
+
+bool Hashtable::getValue(int targetId, DataNode *returnNode)
+{
+
+    int hashedId = hashFunction(targetId);
+    DataNode *searchNode = new DataNode();
+    if (linkedListArray[hashedId].getNode(targetId, searchNode)){
+        returnNode->data = searchNode->data;
+        returnNode->id = searchNode->id;
+        return true;
+    }
+    return false;
 }
 
 bool Hashtable::isEmpty()
