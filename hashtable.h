@@ -30,6 +30,7 @@ public:
     bool isEmpty();
     void dumpTable();
     bool remove(int targetId);
+    void traverse(void visit(DoublyLinkedList&));
 
 private:
     int hashFunction(int id);

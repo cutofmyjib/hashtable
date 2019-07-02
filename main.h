@@ -9,6 +9,7 @@ Purpose: This is the main header file.
 
 #include <iostream>     /* cout, endl */
 #include <stdlib.h>     /* srand, rand */
+#include <fstream> 
 
 #include "hashtable.h"
 #include "linkedlist.h"

@@ -107,3 +107,12 @@ bool Hashtable::remove(int targetId)
     bool isRemoved = linkedListArray[hashedId].deleteNode(targetId);
     return isRemoved;    
 }
+
+void Hashtable::traverse(void visit(DoublyLinkedList&))
+{
+    for (int i = 0; i < TABLESIZE; i++) {
+        if (linkedListArray[i].getCount() > 0){
+            visit(linkedListArray[i]);
+        }
+    }
+}
